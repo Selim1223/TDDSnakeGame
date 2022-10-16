@@ -19,7 +19,7 @@ namespace TDDSnakeGame
         }
 
         [TestMethod]
-        public void StartingGameNoPlayers()
+        public void StartingGameWithNoPlayers()
         {
             Assert.AreEqual(game.CountPlayers(), 0);
         }
@@ -62,6 +62,13 @@ John");
 
 
         [TestMethod]
+        public void StartGame_WillHaveTwoPlayers()
+        {
+            game.Start();
+            Assert.AreEqual(game.CountPlayers(), 2);
+        }
+
+        [TestMethod]
         public void SetIsStarted_SetItToTrue()
         {
             game.AddPlayer("Tom");
@@ -70,12 +77,6 @@ John");
             Assert.IsTrue(game.IsStarted);
         }
 
-        [TestMethod]
-        public void StartGame_WillHaveTwoPlayers()
-        {
-            game.Start();
-            Assert.AreEqual(game.CountPlayers(), 2);
-        }
 
         [TestMethod]
         public void StartGameWithTwoPlayers_WillSetGameStarted()

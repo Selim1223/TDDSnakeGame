@@ -14,7 +14,7 @@ namespace TDDSnakeGame
         public void DiceRoll_ShouldNotBeNull()
         {
             Assert.IsNotNull(Dice.Roll());
-        }     
+        }
 
     }
 }

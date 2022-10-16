@@ -38,8 +38,7 @@ namespace TDDSnakeGame
             Assert.IsNotNull(_player.ScoreDice);
         }
 
-
-
+    
         [TestMethod]
         public void GetPlayersName()
         {
