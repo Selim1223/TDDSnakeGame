@@ -2,7 +2,7 @@
 {
     public class Dice
     {
-        private static Random random = new Random();
+        public static Random random = new Random();
 
         public static int Roll()
         {

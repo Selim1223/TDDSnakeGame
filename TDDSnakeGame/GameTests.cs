@@ -47,7 +47,6 @@ namespace TDDSnakeGame
             Assert.ThrowsException<UnhandledNumberOfPlayersException>(() => game.AddPlayer("Paul"));
         }
 
-        [TestMethod]
         public void AskPlayersNames_WillSetPlayerNames()
         {
             var input = new StringReader(@"Tom
@@ -61,12 +60,7 @@ John");
         }
 
 
-        [TestMethod]
-        public void StartGame_WillHaveTwoPlayers()
-        {
-            game.Start();
-            Assert.AreEqual(game.CountPlayers(), 2);
-        }
+  
 
         [TestMethod]
         public void SetIsStarted_SetItToTrue()
@@ -78,31 +72,10 @@ John");
         }
 
 
-        [TestMethod]
-        public void StartGameWithTwoPlayers_WillSetGameStarted()
-        {
-            game.Start();
-            Assert.IsTrue(game.IsStarted);
-        }
-
-        [TestMethod]
-        public void StartGame_SetTurnToOne()
-        {
-            game.Start();
-            Assert.AreEqual(game.CurrentTurn, 1);
-        }
-
-        [TestMethod]
-        public void GetPlayerTurn()
-        {
-            game.Start();
-            Assert.AreEqual(game.GetPlayerTurn(), game.Players[0]);
-        }
 
         [TestMethod]
         public void GameFinalPositionEquals50()
         {
-            game.Start();
             Assert.AreEqual(game.GameTurn, 50);
         }
 

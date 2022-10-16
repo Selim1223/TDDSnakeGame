@@ -50,9 +50,9 @@ namespace TDDSnakeGame
 
         public void AskPlayersNames()
         {
-            Console.WriteLine("Please set player one name : ");
+            Console.WriteLine("Choisissez le prénom du joueur 1 : ");
             AddPlayer(Console.ReadLine());
-            Console.WriteLine("Please set player two name : ");
+            Console.WriteLine("Choisissez le prénom du joueur 2 : ");
             AddPlayer(Console.ReadLine());
         }
 

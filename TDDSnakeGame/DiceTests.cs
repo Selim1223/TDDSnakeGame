@@ -8,6 +8,7 @@ namespace TDDSnakeGame
         public DiceTests()
         {
             _dice = new Dice();
+           
         }
 
         [TestMethod]
