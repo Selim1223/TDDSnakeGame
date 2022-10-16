@@ -12,6 +12,20 @@ namespace TDDSnakeGame
     {
         private Player _player;
 
+        private Game game;
+        private Player playerOne;
+        private Player playerTwo;
+
+        [TestInitialize]
+        public void InitTests()
+        {
+            game = new Game();
+            game.AddPlayer("Tom");
+            game.AddPlayer("John");
+            playerOne = game.Players.First();
+            playerTwo = game.Players.Last();
+        }
+
         public PlayerTests()
         {
             _player = new Player("");
@@ -19,23 +33,26 @@ namespace TDDSnakeGame
         }
 
         [TestMethod]
-        public void NbPlayers_ShouldNotBeNull()
+        public void ScoreDiceOfPlayers_ShouldNotBeNull()
         {
-            Assert.IsNotNull(_player.number);
+            Assert.IsNotNull(_player.ScoreDice);
         }
-   
+
+
 
         [TestMethod]
-        public void NbPlayers_ShouldBe2()
+        public void GetPlayersName()
         {
-            _player.number.Equals(2);
+            Assert.AreEqual(playerOne.Name, "Tom");
+            Assert.AreEqual(playerTwo.Name, "John");
+            
         }
 
 
         [TestMethod]
         public void PlayersPositions_ShouldBe25IfPositionExceed50()
         {
-            if(_player.newPosition >50)
+            if(_player.newPosition > 50)
                 _player.newPosition.Equals(25);
         }
     }

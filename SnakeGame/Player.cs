@@ -9,26 +9,27 @@ namespace TDDSnakeGame
 {
     public class Player
     {
-        public string name { get; set; }
+        public string Name { get; set; }
         public int newPosition { get; set; }
 
-        public int number { get; set; }
+        public int ScoreDice { get; set; }
+
 
         public Player(string name)
         {
-            this.name = name;
+            this.Name = name;
         }
        
 
         public void DiceRoll()
         {
-            int number = Dice.Roll();
-            newPosition += number;
-            Console.WriteLine(name + " a jeté son dé et à obtenu le score de " + number + " sa position est de " + newPosition);
+            int ScoreDice = Dice.Roll();
+            newPosition += ScoreDice;
+            Console.WriteLine(Name + " a jeté son dé et à obtenu le score de " + ScoreDice + " sa position est de " + newPosition);
             if (newPosition > 50)
             {
                 newPosition = 25;
-                Console.WriteLine(name + " a dépassé la position 50, il retombe à 25");
+                Console.WriteLine(Name + " a dépassé la position 50, il retombe à 25");
             }
             Console.WriteLine("\n");
         }
